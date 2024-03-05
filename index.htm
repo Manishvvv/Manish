@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SecureVote Hub</title>
+
+	<!-- Reset -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+	<link rel="shortcut icon" type="image/png"
+		href="icologo.png">
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://db.onlinewebfonts.com/c/57e74ee407bf5977010a4b1a4d913b0b?family=Kamerik+105+W00+Heavy"
+		rel="stylesheet">
+
+	<style>
+		
+		html {
+			font-size: 16px;
+			font-family: "Arial", sans-serif;
+			line-height: 1.5;
+		}
+
+		body {
+			overflow-y: scroll;
+			scrollbar-width: none;
+			-ms-overflow-style: none;
+		}
+
+		/* Customize the scrollbar thumb for browsers that don't support hiding it */
+		::-webkit-scrollbar {
+			width: 0;
+			height: 0;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background-color: transparent;
+		}
+
+		body {
+			color: #FFFFFF;
+		}
+
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			padding-right: 5%;
+			padding-left: 5%;
+			margin: auto;
+			background-color: #001F3F;
+		}
+
+
+		a img {
+			max-width: 70px;
+			height: auto;
+			color: #FFFFFF;
+
+		}
+
+		nav a {
+			font-family: "Arial", sans-serif;
+			font-weight: 700;
+			font-style: normal;
+		}
+
+		nav ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			align-items: center;
+			gap: 2rem;
+		}
+
+		nav ul a {
+			text-decoration: none;
+			color: #FFFFFF;
+		}
+
+		/* .btn {
+			color: white;
+			background-color: #2ECC40;
+			display: inline-block;
+			padding: .75rem 1.5rem;
+			border-radius: 1rem;
+			border: 1px solid #AAAAAA;
+		} */
+
+		/* Air */
+
+		.menu {
+			font-weight: 300;
+			font-size: 14px;
+			border-radius: 1rem;
+			padding: .2rem .25rem;
+			transition: background-color 200ms ease-in-out, color 200ms ease-in-out, border-color 200ms ease-in-out;
+		}
+
+		.menu:hover {
+			background-color: white;
+			color: #151618;
+			border-color: #AAAAAA;
+			transform: scale(1.1);
+		}
+
+		/* .btn {
+			transition: background-color 200ms ease-in-out, color 200ms ease-in-out, border-color 200ms ease-in-out;
+		}
+
+		.btn:hover {
+			background-color: white;
+			color: #151618;
+			border-color: #AAAAAA;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 10px auto;
+			padding: 20px;
+			text-align: center;
+			background-color: #f4f8fd;
+		}
+
+		.welcome-message {
+			font-size: 3rem;
+			margin-bottom: 20px;
+			color: #333;
+			font-style: bold;
+			font-family: "Kamerik 105 W00 Heavy";
+		}
+
+		.image-container {
+			max-width: 1080px;
+			margin: 20px auto;
+		}
+
+		.image-container img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.university-details {
+			font-size: 1.2rem;
+			margin-top: 20px;
+			color: #666;
+		}
+
+		.container-2 {
+			max-width: 800px;
+			margin: 30px auto;
+			padding: 20px;
+			text-align: center;
+		}
+
+		.container-2 h2 {
+			font-size: 32px;
+			font-weight: bold;
+			margin-bottom: 20px;
+			text-align: center;
+			color: #000000;
+		}
+
+		.container-2 p {
+			font-size: 18px;
+			line-height: 1.5;
+			margin-bottom: 20px;
+			color: #151618;
+		} */
+
+		.container-3 {
+			background-color: #404040;
+			padding: 50px;
+			text-align: center;
+
+		}
+
+		.container-3 h3 {
+			font-size: 28px;
+			color: #ffffff;
+			font-family: 'poppins ', sans-serif;
+		}
+
+		.container-3 p {
+			font-size: 15px;
+			padding: 10px 0px;
+			color: #ffffff;
+			font-family: 'poppins ', sans-serif;
+		}
+
+		.container-3 form {
+			display: flex;
+			justify-content: center;
+		}
+
+		.container-3 input[type="email"] {
+			width: 300px;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+			font-size: 18px;
+			margin-right: 20px;
+		}
+
+		.container-3 input[type="submit"] {
+			padding: 10px 20px;
+			background-color: #333;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 18px;
+		}
+
+		.container-3 input[type="submit"]:hover {
+			background-color: #444;
+		}
+
+		@media screen and (max-width: 768px) {
+			.container-3 {
+				padding: 30px;
+			}
+
+			.container-3 input[type="email"] {
+				width: 100%;
+			}
+		}
+
+		.footer {
+			background-color: #001F3F;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			margin: 10px 0px;
+		}
+
+		.footer p {
+			margin: 0;
+			font-size: 14px;
+		}
+
+		.footer ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.footer li {
+			margin: 0 10px;
+		}
+
+		.footer a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 14px;
+		}
+/* 
+		.has-submenu {
+			position: relative;
+			display: flex;
+			gap: .5rem;
+			align-items: center;
+			justify-content: flex-start;
+		}
+
+
+		.has-submenu::after {
+			content: url('icons/icon-arrow-down.svg');
+			opacity: .6;
+			height: 25px;
+		}
+
+		.has-submenu:hover ul {
+			display: block;
+		}
+
+		.has-submenu ul {
+			position: absolute;
+			top: 100%;
+			left: -4rem;
+			background-color: #00264c;
+			border-radius: .5rem;
+			padding: .5rem;
+			display: none;
+		}
+
+		.has-submenu ul a {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1rem;
+			min-width: 9rem;
+			border-radius: .5rem;
+			font-size: 14px;
+		}
+
+
+		.has-submenu ul a:hover {
+			background-color: #001F3F;
+			padding: 1rem 1.5rem;
+		}
+
+		.has-submenu ul a:hover::after {
+			opacity: 1;
+		}
+
+		.has-submenu:hover::after {
+			opacity: 1;
+		}
+
+		.has-submenu:hover>a {
+			color: #E8E8E8;
+		}
+
+		nav ul a {
+			transition-property: color;
+		}
+
+		.has-submenu ul {
+			display: block;
+			opacity: 1;
+			visibility: hidden;
+			transform: translateX(-1rem);
+			transition-property: opacity, visibility, transform;
+		}
+
+		.has-submenu:hover ul {
+			opacity: 1;
+			visibility: visible;
+			transform: translateX(0);
+		}
+
+
+
+		nav ul a,
+		.has-submenu ul {
+			transition-duration: var(--def-transition-duration);
+			transition-timing-function: ease-in-out;
+		} */
+
+		img {
+			max-width: 100%;
+			vertical-align: middle;
+			display: inline-block;
+		}
+
+		.container {
+			width: 100%;
+			max-width: 940px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+
+		.hero-heading-right {
+			color: #001f3f;
+			background-color: #f5f7fa;
+			border-bottom: 1px solid #e4ebf3;
+			padding: 80px 30px;
+			position: relative;
+		}
+
+		.hero-wrapper {
+			justify-content: space-between;
+			align-items: center;
+			display: flex;
+		}
+
+		.hero-split {
+			max-width: 46%;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			display: flex;
+		}
+
+		.shadow-two {
+			box-shadow: 0 4px 24px rgba(150, 163, 181, .08);
+		}
+
+		.margin-bottom-24px {
+			color: #001f3f;
+			margin-bottom: 24px;
+		}
+
+		.button-primary-2 {
+			text-decoration: none;
+			color: #fff;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			background-color: #001F3F;
+			padding: 12px 25px;
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 20px;
+			transition: all .2s;
+		}
+
+		.button-primary-2:hover {
+			color: #fff;
+			background-color: #001F3F;
+		}
+
+		.button-primary-2:active {
+			background-color: #43464d;
+		}
+
+		.heading {
+			color: #001f3f;
+		}
+
+		.hero-stack {
+			background-color: #f5f7fa;
+			border-bottom: 1px solid #e4ebf3;
+			padding: 80px 30px;
+			position: relative;
+		}
+
+		.hero-wrapper-two {
+			max-width: 750px;
+			text-align: center;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			margin-left: auto;
+			margin-right: auto;
+			display: flex;
+		}
+
+		.button-primary-3 {
+			color: #fff;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			background-color: #1a1b1f;
+			padding: 12px 25px;
+			font-size: 12px;
+			line-height: 20px;
+			transition: all .2s;
+		}
+
+		.button-primary-3:hover {
+			color: #fff;
+			background-color: #32343a;
+		}
+
+		.button-primary-3:active {
+			background-color: #43464d;
+		}
+
+		.hero-image {
+			width: 100%;
+			margin-top: 50px;
+		}
+
+		.heading-2 {
+			color: #001f3f;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li>
+					<a href="index.htm"><img
+							src="nobglogo2.png"
+							alt="Logo"></a>
+				</li>
+				<li>
+					<h1><a href="index.htm">SecureVote <span style="color: #FFD700;">Hub</span></a></h1>
+
+				</li>
+			</ul>
+		</nav>
+		<nav>
+			<ul>
+
+				<li><a class="menu" href="Register.html">Register</a></li>
+				<li><a class="menu" href="Login.html">User Login</a></li>
+				<li><a class="menu" href="Admin_login.html">Admin Login</a></li>
+				
+			</ul>
+		</nav>
+	</header>
+
+	<div class="hero-heading-right">
+		<div class="container">
+			<div class="hero-wrapper">
+				<div class="hero-split"><img
+						src="https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e15d75f73c2995b3dc59f1_computer-network-computer-security.jpg"
+						loading="lazy" sizes="(max-width: 767px) 94vw, (max-width: 991px) 92vw, 43vw"
+						srcset="https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e15d75f73c2995b3dc59f1_computer-network-computer-security-p-500.jpg 500w, https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e15d75f73c2995b3dc59f1_computer-network-computer-security-p-800.jpg 800w, https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e15d75f73c2995b3dc59f1_computer-network-computer-security-p-1080.jpg 1080w, https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e15d75f73c2995b3dc59f1_computer-network-computer-security-p-1600.jpg 1600w, https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e15d75f73c2995b3dc59f1_computer-network-computer-security-p-2000.jpg 2000w, https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e15d75f73c2995b3dc59f1_computer-network-computer-security-p-2600.jpg 2600w, https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e15d75f73c2995b3dc59f1_computer-network-computer-security-p-3200.jpg 3200w, https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e15d75f73c2995b3dc59f1_computer-network-computer-security.jpg 3616w"
+						alt="" /></div>
+				<div class="hero-split">
+					<h1 class="heading">Empowering Democracy with Blockchain Technology</h1>
+					<p class="margin-bottom-24px">SecureVote Hub is at the forefront of transforming traditional voting
+						systems into secure, transparent, and efficient processes. Embrace the future of democracy with
+						our cutting-edge blockchain-based voting platform.</p><a href="Register.html"
+						class="button-primary-2 w-button">Get
+						Started</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section class="hero-stack">
+		<div class="container">
+			<div class="hero-wrapper-two">
+				<h1 class="heading-2">SecureVote Hub: The Blockchain Voting Solution</h1>
+				<p class="margin-bottom-24px">SecureVote Hub is a revolutionary blockchain voting system that
+					prioritizes transparency, security, and accessibility. Our platform offers a range of key features
+					designed to ensure a trustworthy and efficient voting experience for all.</p><img
+					src="https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e1632c52fdefda5f8040e3_finger-pressing-vote-green-button-keyboard-online-elections.jpg"
+					loading="lazy" sizes="(max-width: 767px) 94vw, (max-width: 991px) 92vw, 750px"
+					srcset="https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e1632c52fdefda5f8040e3_finger-pressing-vote-green-button-keyboard-online-elections-p-500.jpg 500w, https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e1632c52fdefda5f8040e3_finger-pressing-vote-green-button-keyboard-online-elections-p-800.jpg 800w, https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e1632c52fdefda5f8040e3_finger-pressing-vote-green-button-keyboard-online-elections-p-1080.jpg 1080w, https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e1632c52fdefda5f8040e3_finger-pressing-vote-green-button-keyboard-online-elections-p-1600.jpg 1600w, https://assets-global.website-files.com/65e0c8059fab9ad8ba878b79/65e1632c52fdefda5f8040e3_finger-pressing-vote-green-button-keyboard-online-elections.jpg 2000w"
+					alt="" class="hero-image shadow-two" />
+			</div>
+		</div>
+	</section>
+
+	<div class="container-3">
+		<h3>Subscribe to Newsletter</h3>
+		<p>Enter your email address to register to our newsletter subscription!</p>
+		<form>
+			<input type="email" placeholder="Email">
+			<input type="submit" value="Send Message">
+		</form>
+	</div>
+
+	<div class="footer">
+		<ul>
+			<li><a href="#">Privacy Policy</a></li>
+			<li><a href="#">Terms of Use</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+	</div>
+
+</body>
+
+</html>
